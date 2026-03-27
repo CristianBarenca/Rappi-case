@@ -25,10 +25,10 @@ El caso está dividido en tres módulos progresivos. El Módulo 1 es el fundamen
 
 1. Ve a anaconda navegator.
 2. Selecciona la opción de ```Environments```
-3. Has clic en el boton import.
+3. Haz clic en el botón Import.
 4. Selecciona la opción Local drive.
 5. Busca el archivo [environment.yaml](environment.yaml)
-6. Finalmente has clic en el boton import y listo. 
+6. Finalmente, haz clic en el botón Import y listo.  
 
 ---
 ### Estrcutura del repositorio
@@ -36,52 +36,52 @@ El caso está dividido en tres módulos progresivos. El Módulo 1 es el fundamen
 ```
 El equipo de Operations actualmente gestiona el balance de forma reactiva.
 
-Nuestra misión es construir un sistema que lo haga de forma proactiva: detectar condiciones que degradarán la operación antes de que ocurran, y enviar alertas accionables con recomendaciones concretas al equipo a través de Telegram.
+Nuestra misión es construir un sistema que lo haga de forma proactiva: detectar condiciones que degradarán la operación antes de que ocurran y enviar alertas accionables con recomendaciones concretas al equipo a través de Telegram.
 
-La estructura que queremos que tenga este repositorio es la siguiente:
+La estructura de este repositorio se justifica con base en el documento rappi_ai_engineer_case.docx, sección Repositorio:
 
 rappi-case
 │
-├─ environment.yaml <-
-├─ LICENSE
-├─ main_pipeline.py
+├─ environment.yaml                                                                 <- Configuración del entorno y dependencias del proyecto.
+├─ LICENSE                                                                          <- Términos legales de uso del proyecto.
+├─ main_pipeline.py                                                                 <- Script principal que ejecuta todo el flujo del proyecto.
 │
-├─ modulo1_diagnostico
-│  ├─ diagnostico.ipynb
-│  ├─ README.md
-│  ├─ Resumen de hallazgos
-│  │  └─ Resumen de hallazgos.pdf
-│  └─ Visualizaciones para cada hallazgo
-│     ├─ EDA
-│     │  ├─ 1.Variables_categóricas_conteo_DATE.png
-│     │  ├─ 1.Variables_categóricas_conteo_RATIO_CATEGORY.png
-│     │  ├─ 1.Variables_categóricas_conteo_ZONE.png
-│     │  ├─ 2.Variables_numéricas_conteo_RATIO.png
-│     │  ├─ 3.Correlacion_Pearson.png
-│     │  └─ 4.Correlacion_en_visual.png
-│     ├─ P1
-│     │  └─ P1_heatmap_saturacion_critica_mayor_1_8.png
-│     ├─ P2
-│     │  └─ Heatmap_de_saturación_por_hora_y_zona.png
-│     ├─ P3
-│     │  └─ P3.Promedio_de_saturacion_por_zona_(horizontal).png
-│     ├─ P4
-│     │  └─ P4.Deteccion_de_Gasto_Ineficiente_Dias_con_Sobrecostos_y_Baja_Demanda.png
-│     └─ P5
-│        └─ P5.Earnings promedio por nivel de saturacion.png
+├─ modulo1_diagnostico                                                                  <- Análisis exploratorio y generación de insights.
+│  ├─ diagnostico.ipynb                                                                 <- Notebook con el EDA y análisis de datos.
+│  ├─ README.md                                                                         <- Explicación del análisis realizado.
+│  ├─ Resumen de hallazgos                                                              <- Resumen ejecutivo del análisis.
+│  │  └─ Resumen de hallazgos.pdf                                                       <- Principales hallazgos y conclusiones.
+│  └─ Visualizaciones para cada hallazgo                                                <- Gráficas que respaldan los insights.
+│     ├─ EDA                                                                            <- Visualizaciones generales del análisis.
+│     │  ├─ 1.Variables_categóricas_conteo_DATE.png                                     <- Distribución por fecha.
+│     │  ├─ 1.Variables_categóricas_conteo_RATIO_CATEGORY.png                           <- Conteo por categoría.
+│     │  ├─ 1.Variables_categóricas_conteo_ZONE.png                                     <- Distribución por zona.
+│     │  ├─ 2.Variables_numéricas_conteo_RATIO.png                                      <- Distribución del ratio.
+│     │  ├─ 3.Correlacion_Pearson.png                                                   <- Correlación entre variables.
+│     │  └─ 4.Correlacion_en_visual.png                                                 <- Visualización de correlaciones.
+│     ├─ P1                                                                             <- Hallazgo 1.
+│     │  └─ P1_heatmap_saturacion_critica_mayor_1_8.png                                 <- Zonas con saturación crítica.
+│     ├─ P2                                                                             <- Hallazgo 2.
+│     │  └─ Heatmap_de_saturación_por_hora_y_zona.png                                   <- Saturación por hora y zona.
+│     ├─ P3                                                                             <- Hallazgo 3.
+│     │  └─ P3.Promedio_de_saturacion_por_zona_(horizontal).png                         <- Promedio por zona.
+│     ├─ P4                                                                             <- Hallazgo 4.
+│     │  └─ P4.Deteccion_de_Gasto_Ineficiente_Dias_con_Sobrecostos_y_Baja_Demanda.png   <- Días ineficientes.
+│     └─ P5                                                                             <- Hallazgo 5.
+│        └─ P5.Earnings promedio por nivel de saturacion.png                            <- Earnings vs saturación.
 │
-├─ modulo2_motor_alertas
-│  ├─ Justificación_de_los_umbrales_y_reglas_del_motor.pdf
-│  ├─ motor_alertas.py
-│  ├─ Original-Monolito-Motor-Alertas.py
-│  └─ README.md
+├─ modulo2_motor_alertas                                                                <- Lógica para generación de alertas.
+│  ├─ Justificación_de_los_umbrales_y_reglas_del_motor.pdf                              <- Explicación de reglas y umbrales.
+│  ├─ motor_alertas.py                                                                  <- Implementación del motor de alertas.
+│  ├─ Original-Monolito-Motor-Alertas.py                                                <- Versión inicial del motor.
+│  └─ README.md                                                                         <- Documentación del módulo.
 │
-├─ modulo3_agente_telegram
-│  ├─ alerts_notify.py
-│  └─ README.md
+├─ modulo3_agente_telegram                                                              <- Envío de alertas por Telegram.
+│  ├─ alerts_notify.py                                                                  <- Script de notificaciones.
+│  └─ README.md                                                                         <- Configuración y uso.
 │
-├─ README.md 
-└─ requirements.txt
+├─ README.md                                                                            <- Descripción general del proyecto.
+└─ requirements.txt                                                                     <- Dependencias necesarias.
 
 ```
 
@@ -89,12 +89,12 @@ rappi-case
 # Anexos 
 
 ### ¿Cómo crear el ambiente de conda?
-Con base en (CONDA, 2026), nombre mi ambiente de desarrollo como: rappi_ai_project_py310 el cual contiene el nombre de la empresa, el puesto, proyecto y la version de Python que estoy utilizando en este caso 3.10, ya que este proyecto sera escalable al integrar la libreria LangChain, la cual esta disponible en la version 3.10 y posteriores (LangChain, 2026).
+El entorno de desarrollo fue configurado utilizando Conda (2026). Siguiendo buenas prácticas de nomenclatura, el ambiente se denominó ```rappi_ai_project_py311```, integrando el nombre de la empresa, el tipo de proyecto y la versión de Python utilizada, lo que facilita su identificación y mantenimiento.
 
-“Se selecciona Python 3.11 como versión base del proyecto debido a su compatibilidad completa con el stack propuesto (LangChain, requests, Telegram API, pandas, seaborn, matplotlib), su mejora significativa de rendimiento respecto a 3.10, y su soporte oficial hasta octubre de 2027, lo que garantiza estabilidad, escalabilidad y facilidad de mantenimiento a largo plazo.”
+Se seleccionó Python 3.11 como versión base debido a su compatibilidad con el stack tecnológico del proyecto (LangChain, requests, Telegram API, pandas, seaborn y matplotlib), así como por sus mejoras de rendimiento frente a versiones anteriores como 3.10. Además, cuenta con soporte oficial hasta octubre de 2027, lo que asegura estabilidad, escalabilidad y mantenimiento a largo plazo.
 
 
-Bibliografia
+**Bibliografía**
 
 1. ¿Cómo crear un ambiente en Anaconda navegator?
 https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
